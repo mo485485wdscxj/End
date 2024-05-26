@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tryyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="userr">
+          <Key>
+            <PropertyRef Name="userr_id" />
+          </Key>
+          <Property Name="userr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userr_name" Type="varchar" MaxLength="50" />
+          <Property Name="userr_pass" Type="varchar" MaxLength="50" />
+          <Property Name="userr_age" Type="int" />
+          <Property Name="userr_gender" Type="varchar" MaxLength="50" />
+          <Property Name="userr_phone" Type="varchar" MaxLength="11" />
+          <Property Name="userr_city" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="tryyModelStoreContainer">
+          <EntitySet Name="userr" EntityType="Self.userr" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tryyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="userr">
+          <Key>
+            <PropertyRef Name="userr_id" />
+          </Key>
+          <Property Name="userr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userr_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userr_pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userr_age" Type="Int32" />
+          <Property Name="userr_gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userr_phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="userr_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="tryyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="userr" EntityType="Self.userr" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tryyModelStoreContainer" CdmEntityContainer="tryyEntities">
+          <EntitySetMapping Name="userr">
+            <EntityTypeMapping TypeName="tryyModel.userr">
+              <MappingFragment StoreEntitySet="userr">
+                <ScalarProperty Name="userr_id" ColumnName="userr_id" />
+                <ScalarProperty Name="userr_name" ColumnName="userr_name" />
+                <ScalarProperty Name="userr_pass" ColumnName="userr_pass" />
+                <ScalarProperty Name="userr_age" ColumnName="userr_age" />
+                <ScalarProperty Name="userr_gender" ColumnName="userr_gender" />
+                <ScalarProperty Name="userr_phone" ColumnName="userr_phone" />
+                <ScalarProperty Name="userr_city" ColumnName="userr_city" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
